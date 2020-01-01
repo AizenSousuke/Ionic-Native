@@ -17,7 +17,7 @@ export class AppComponent {
       icon: 'home'
     },
     {
-      title: 'List',
+      title: 'List of Pictures',
       url: '/list',
       icon: 'list'
     }
@@ -33,7 +33,8 @@ export class AppComponent {
 
   initializeApp() {
     this.platform.ready().then(() => {
-      this.statusBar.styleDefault();
+      // Changed to light text statusbar
+      this.statusBar.styleLightContent();
       this.splashScreen.hide();
     });
   }

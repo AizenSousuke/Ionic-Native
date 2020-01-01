@@ -10,39 +10,59 @@
 </ion-header>
 
 <ion-content>
-  <ion-card class="welcome-card">
-    <img src="/assets/shapes.svg" alt=""/>
-    <ion-card-header>
-      <ion-card-subtitle>Get Started</ion-card-subtitle>
-      <ion-card-title>Welcome to Ionic</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <p>
-        Now that your app has been created, you'll want to start building out features
-        and components. Check out some of the resources below for next steps.
-      </p>
-    </ion-card-content>
-  </ion-card>
-
-  <ion-list lines="none">
-    <ion-list-header>
-      <ion-label>Resources</ion-label>
-    </ion-list-header>
-    <ion-item href="https://ionicframework.com/docs/">
-      <ion-icon slot="start" color="medium" name="book"></ion-icon>
-      <ion-label>Ionic Documentation</ion-label>
-    </ion-item>
-    <ion-item href="https://ionicframework.com/docs/building/scaffolding">
-      <ion-icon slot="start" color="medium" name="build"></ion-icon>
-      <ion-label>Scaffold Out Your App</ion-label>
-    </ion-item>
-    <ion-item href="https://ionicframework.com/docs/layout/structure">
-      <ion-icon slot="start" color="medium" name="grid"></ion-icon>
-      <ion-label>Change Your App Layout</ion-label>
-    </ion-item>
-    <ion-item href="https://ionicframework.com/docs/theming/basics">
-      <ion-icon slot="start" color="medium" name="color-fill"></ion-icon>
-      <ion-label>Theme Your App</ion-label>
-    </ion-item>
-  </ion-list>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size-xs="12" size-md="6">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>Welcome to your photobook</mat-card-title>
+            <mat-card-subtitle><i>App developed by Nik</i></mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus quibusdam fugiat quod eius ipsa numquam molestiae vitae quis eum sit quia provident rem dignissimos fugit magnam, harum dolores nulla maiores.
+          </mat-card-content>
+          <mat-card-actions>
+            <a href="mailto:puteranikdimas@gmail.com"><button mat-button>Give feedback via email</button></a>
+          </mat-card-actions>
+        </mat-card>
+      </ion-col>
+      <ion-col size-xs="12" size-md="6">
+        <mat-accordion multi="false">
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              What is this app for?
+            </mat-expansion-panel-header>
+            <mat-panel-description>
+              Uploading photos and reminiscing through them.
+            </mat-panel-description>
+          </mat-expansion-panel>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              Instructions
+            </mat-expansion-panel-header>
+            <mat-panel-description>
+              <mat-list>
+                <mat-list-item><mat-icon>checkmark</mat-icon> Add a picture</mat-list-item>              
+                <mat-list-item><mat-icon>checkmark</mat-icon> Name it</mat-list-item>              
+                <mat-list-item><mat-icon>checkmark</mat-icon> View pictures list</mat-list-item>              
+                <mat-list-item><mat-icon>checkmark</mat-icon> Profit!</mat-list-item>
+              </mat-list>           
+            </mat-panel-description>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </ion-col>
+    </ion-row>
+    <mat-divider>
+    </mat-divider>
+    <ion-row>
+      <ion-col size-xs="12">
+        Photo: {{ photo }}
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size-xs="12">
+        <button mat-raised-button color="primary" (click)="onAddPhoto()">Add a photo from my phone</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
