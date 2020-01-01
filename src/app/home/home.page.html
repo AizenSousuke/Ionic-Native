@@ -56,12 +56,18 @@
     </mat-divider>
     <ion-row>
       <ion-col size-xs="12">
-        Photo: {{ photo }}
+        <!-- Photo: {{ photo }} -->
+        <div *ngIf="photo">
+          <img src='{{photo}}' alt="image">
+        </div>
       </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col size-xs="12">
+      <ion-col size-xs="12" size-sm="6">
         <button mat-raised-button color="primary" (click)="onAddPhoto()">Add a photo from my phone</button>
+      </ion-col>
+      <ion-col size-xs="12" size-sm="6">
+        <button mat-raised-button color="warn" (click)="onRemovePhoto()">Remove chosen photo</button>
       </ion-col>
     </ion-row>
   </ion-grid>

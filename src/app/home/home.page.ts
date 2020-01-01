@@ -14,11 +14,16 @@ export class HomePage {
 
   onAddPhoto() {
     console.log("Adding photos");
-    this._ionicNativeService.onChooseFile().then(string => {
-      console.log(string);
+    this._ionicNativeService.onChooseImage().then(string => {
+      // console.log(string);
       this.photo = string;
     });
-    console.log(this.photo);
+    // console.log(this.photo);
+  }
+
+  onRemovePhoto() {
+    console.log("Removing added photo");
+    this.photo = '';
   }
 
 }

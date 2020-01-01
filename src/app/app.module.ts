@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { IonicNativeService } from './ionic-native.service';
 import { FileChooser } from '@ionic-native/file-chooser/ngx';
+import { ImagePicker } from '@ionic-native/image-picker/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -27,6 +28,7 @@ import { FileChooser } from '@ionic-native/file-chooser/ngx';
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     IonicNativeService,
     FileChooser,
+    ImagePicker,
   ],
   bootstrap: [AppComponent]
 })
