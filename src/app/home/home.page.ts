@@ -11,7 +11,10 @@ export class HomePage {
   photo = '';
   photoUploaded = false;
 
-  constructor(private _ionicNativeService: IonicNativeService) {}
+  constructor(
+    private _ionicNativeService: IonicNativeService,
+    ) {
+  }
 
   onAddPhoto() {
     console.log("Adding photos");
@@ -34,5 +37,4 @@ export class HomePage {
     this.photo = '';
     this.photoUploaded = false;
   }
-
 }
