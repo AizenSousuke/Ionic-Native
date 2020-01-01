@@ -6,8 +6,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ionic serve -w chrome",
-    "android": "ionic cordova run android --device",
-    "androidlive": "ionic cordova emulate android -l --consolelogs",
+    "androidrunlive": "ionic cordova run android --device -l --consolelogs",
+    "androidemulatelive": "ionic cordova emulate android -l --consolelogs",
     "androidprod": "ionic cordova run android --prod --release",
     "build": "ionic build --prod",
     "test": "ng test",

@@ -55,20 +55,41 @@
     <mat-divider>
     </mat-divider>
     <ion-row>
-      <ion-col size-xs="12">
-        <!-- Photo: {{ photo }} -->
-        <div *ngIf="photo">
-          <img src='{{photo}}' alt="image">
-        </div>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size-xs="12" size-sm="6">
-        <button mat-raised-button color="primary" (click)="onAddPhoto()">Add a photo from my phone</button>
-      </ion-col>
-      <ion-col size-xs="12" size-sm="6">
-        <button mat-raised-button color="warn" (click)="onRemovePhoto()">Remove chosen photo</button>
-      </ion-col>
+      <mat-vertical-stepper class="fullwidth" linear>
+        <mat-step label="Step 1" completed="{{photoUploaded}}" #step1>
+          <ion-row size-xs="12" *ngIf="photo">
+            <!-- Photo: {{ photo }} -->
+            <img src='{{photo}}' alt="image">
+          </ion-row>
+          <ion-row size="12">
+            <ion-col size-xs="12">
+              <button mat-raised-button color="primary" (click)="onAddPhoto()">Add a photo from my phone</button>
+            </ion-col>
+            <ion-col size-xs="12" *ngIf="photo">
+              <button mat-raised-button color="warn" (click)="onRemovePhoto()">Remove chosen photo</button>
+            </ion-col>
+            <ion-col size-xs="12" *ngIf="photo!=''">
+              <button mat-raised-button color="accent" matStepperNext>Next</button>
+            </ion-col>
+          </ion-row>
+        </mat-step>
+        <mat-step label="Step 2" #step2>
+          <ion-row>
+            <p>Name your story:</p>
+            <mat-form-field class="fullwidth">
+              <input matInput value="Today I went to the park...">
+            </mat-form-field>
+          </ion-row>
+          <ion-row>
+            <ion-col size="12">
+              <button mat-raised-button color="accent" matStepperPrevious>Previous</button>
+            </ion-col>
+            <ion-col size="12">
+              <button mat-raised-button color="primary" (click)="onSubmitStory()">Submit Story</button>
+            </ion-col>
+          </ion-row>
+        </mat-step>
+      </mat-vertical-stepper>
     </ion-row>
   </ion-grid>
 </ion-content>

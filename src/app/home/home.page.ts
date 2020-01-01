@@ -8,7 +8,8 @@ import { IonicNativeService } from '../ionic-native.service';
 })
 export class HomePage {
 
-  photo;
+  photo = '';
+  photoUploaded = false;
 
   constructor(private _ionicNativeService: IonicNativeService) {}
 
@@ -17,6 +18,13 @@ export class HomePage {
     this._ionicNativeService.onChooseImage().then(string => {
       // console.log(string);
       this.photo = string;
+      if (string != "") {
+        this.photoUploaded = true;
+        console.log("Photo has been uploaded");
+      } else {
+        console.log("Photo has not been uploaded");
+        this.photoUploaded = false;
+      }
     });
     // console.log(this.photo);
   }
@@ -24,6 +32,7 @@ export class HomePage {
   onRemovePhoto() {
     console.log("Removing added photo");
     this.photo = '';
+    this.photoUploaded = false;
   }
 
 }
