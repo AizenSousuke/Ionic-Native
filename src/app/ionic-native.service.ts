@@ -33,8 +33,10 @@ export class IonicNativeService {
         maximumImagesCount: 1,
         // 0 is File URI, use 1 for BASE64_STRING
         outputType: 1,
+        // Width
+        width: 250,
       }).then(results => {
-        // console.log(results);
+        // console.log(results.toString());
         if (results.length > 0) {
           return "data:image/png;base64," + results;
         } else {
@@ -46,7 +48,7 @@ export class IonicNativeService {
       });
     } catch (error) {
       console.log("Error:" + error);
-      throw "Error";
+      throw console.log("Error");
     }
   }
 }

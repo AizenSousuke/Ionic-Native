@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
 
 import { HomePage } from './home.page';
 
 import { MaterialModule } from '../material.module'
+import { FormServiceService } from '../form-service.service';
 
 @NgModule({
   imports: [
@@ -20,7 +21,11 @@ import { MaterialModule } from '../material.module'
       }
     ]),
     MaterialModule,
+    ReactiveFormsModule,
   ],
-  declarations: [HomePage]
+  declarations: [HomePage],
+  providers: [
+    FormServiceService,
+  ]
 })
 export class HomePageModule {}

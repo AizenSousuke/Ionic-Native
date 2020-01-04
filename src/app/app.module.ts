@@ -20,7 +20,7 @@ import { ImagePicker } from '@ionic-native/image-picker/ngx';
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   providers: [
     StatusBar,
